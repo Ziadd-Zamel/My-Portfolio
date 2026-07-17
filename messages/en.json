@@ -1,0 +1,34 @@
+{
+  "HomePage": {
+    "title": "Welcome",
+    "description": "Your application is now configured for internationalization."
+  },
+  "FederationsPage": {
+    "title": "Federations",
+    "description": "National federations and member associations."
+  },
+  "Navbar": {
+    "navAriaLabel": "Main navigation",
+    "logoAlt": "Volley Africain logo",
+    "home": "Home",
+    "cavb": "CAVB",
+    "federations": "Federations",
+    "formations": "Training",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "socialFacebook": "Facebook",
+    "socialInstagram": "Instagram",
+    "socialX": "X",
+    "socialYoutube": "YouTube",
+    "languageSwitcherLabel": "Language"
+  },
+  "Federation": {
+    "title": "Federations",
+    "zones": {
+      "zone1": "Zone 1: Mr Mustapha LEMOUCHI (Algeria)",
+      "zone2": "Zone 2: Dr Amadou SEYE (Senegal)",
+      "zone3": "Zone 3: Mr Sourakatou Ali YARO (Benin)"
+    },
+    "latest": "Latest"
+  }
+}

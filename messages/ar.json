@@ -1,0 +1,34 @@
+{
+  "HomePage": {
+    "title": "مرحبا",
+    "description": "تم اعداد التطبيق لدعم تعدد اللغات."
+  },
+  "FederationsPage": {
+    "title": "الاتحادات",
+    "description": "الاتحادات الوطنية والجمعيات الأعضاء."
+  },
+  "Navbar": {
+    "navAriaLabel": "التنقل الرئيسي",
+    "logoAlt": "شعار الكرة الطائرة الأفريقية",
+    "home": "الرئيسية",
+    "cavb": "CAVB",
+    "federations": "الاتحادات",
+    "formations": "التكوين",
+    "gallery": "المعرض",
+    "contact": "اتصل بنا",
+    "socialFacebook": "فيسبوك",
+    "socialInstagram": "إنستغرام",
+    "socialX": "إكس",
+    "socialYoutube": "يوتيوب",
+    "languageSwitcherLabel": "اللغة"
+  },
+  "Federation": {
+    "title": "الاتحادات",
+    "zones": {
+      "zone1": "المنطقة 1: مصطفى لموشي (الجزائر)",
+      "zone2": "المنطقة 2: أمادو سي (السنغال)",
+      "zone3": "المنطقة 3: سوراكاتو علي يارو (بنين)"
+    },
+    "latest": "الأحدث"
+  }
+}
