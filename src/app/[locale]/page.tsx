@@ -1,12 +1,15 @@
-import { getTranslations } from "next-intl/server";
+import HeroSection from "./_components/hero/hero-section";
+import FeaturedProjectsSection from "./_components/featured-projects/featured-projects-section";
+import AboutSection from "./_components/about/about-section";
+import ContactSection from "./_components/contact/contact-section";
 
-export default async function Home() {
-  const t = await getTranslations("HomePage");
-
+export default function Home() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-12">
-      <h1 className="text-3xl font-semibold">{t("title")}</h1>
-      <p className="mt-3 text-muted-foreground">{t("description")}</p>
-    </section>
+    <>
+      <HeroSection />
+      <FeaturedProjectsSection />
+      <AboutSection />
+      <ContactSection />
+    </>
   );
 }

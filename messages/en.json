@@ -1,34 +1,149 @@
 {
   "HomePage": {
-    "title": "Welcome",
-    "description": "Your application is now configured for internationalization."
-  },
-  "FederationsPage": {
-    "title": "Federations",
-    "description": "National federations and member associations."
-  },
-  "Navbar": {
-    "navAriaLabel": "Main navigation",
-    "logoAlt": "Volley Africain logo",
-    "home": "Home",
-    "cavb": "CAVB",
-    "federations": "Federations",
-    "formations": "Training",
-    "gallery": "Gallery",
-    "contact": "Contact",
-    "socialFacebook": "Facebook",
-    "socialInstagram": "Instagram",
-    "socialX": "X",
-    "socialYoutube": "YouTube",
-    "languageSwitcherLabel": "Language"
-  },
-  "Federation": {
-    "title": "Federations",
-    "zones": {
-      "zone1": "Zone 1: Mr Mustapha LEMOUCHI (Algeria)",
-      "zone2": "Zone 2: Dr Amadou SEYE (Senegal)",
-      "zone3": "Zone 3: Mr Sourakatou Ali YARO (Benin)"
+    "hero": {
+      "available": "Available for work",
+      "greeting": "Hi, I'm",
+      "name": "Ziad",
+      "role": "Software Engineer",
+      "description": "I design and build fast, accessible web apps with Next.js, React, and TypeScript — turning ideas into polished interfaces and scalable products.",
+      "primaryCta": "View my work",
+      "secondaryCta": "Get in touch",
+      "stats": {
+        "experience": "Years experience",
+        "projects": "Projects shipped",
+        "clients": "Happy clients"
+      },
+      "card": {
+        "title": "developer.ts",
+        "comment": "// building the web, one component at a time"
+      }
     },
-    "latest": "Latest"
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "allTitle": "All Projects",
+      "allDescription": "A full collection of selected work — explore every project in detail.",
+      "viewAll": "View All",
+      "details": "View project details",
+      "items": {
+        "pulse-analytics": {
+          "category": "SaaS Dashboard",
+          "title": "Pulse Analytics",
+          "description": "A real-time analytics dashboard built for teams that need clarity at speed. It combines clean charting, role-based access, and fast filtering so users can move from raw data to decisions without friction. The interface stays lightweight while still supporting complex views, saved filters, and responsive layouts across devices."
+        },
+        "atelier-studio": {
+          "category": "Marketing Site",
+          "title": "Atelier Studio",
+          "description": "A polished agency website designed to feel premium and conversion-focused. Smooth motion, structured case studies, and a clear contact flow guide visitors from first impression to inquiry. Every section is crafted to showcase craft, build trust, and keep the brand voice consistent from landing page to project details."
+        },
+        "flowdesk": {
+          "category": "Productivity",
+          "title": "FlowDesk",
+          "description": "A lightweight project workspace for teams who want focus without clutter. Boards, tasks, and collaboration tools stay simple and fast so work stays organized without heavy process. Built for day-to-day shipping, it helps teams plan, track progress, and stay aligned across projects with a calm, usable interface."
+        }
+      }
+    },
+    "about": {
+      "eyebrow": "About me",
+      "available": "Available for work",
+      "role": "Software Engineer",
+      "location": "Egypt",
+      "title": "I turn ideas into",
+      "titleAccent": "products that ship.",
+      "description": "With 3+ years of experience, I design and build full-stack web apps with Next.js, React, and Node.js. I've shipped 40+ projects — from Figma to polished UI, solid APIs, and features that actually move metrics.",
+      "highlights": {
+        "experience": "Years experience",
+        "projects": "Projects shipped",
+        "performance": "Faster load times",
+        "efficiency": "Team efficiency"
+      },
+      "pillars": {
+        "ui": {
+          "title": "Interface craft",
+          "description": "Clean, accessible UI with strong hierarchy and attention to detail."
+        },
+        "architecture": {
+          "title": "Solid architecture",
+          "description": "Maintainable frontends and scalable APIs teams can rely on."
+        },
+        "performance": {
+          "title": "Performance first",
+          "description": "Fast loads, smooth UX, and code that's easy to extend."
+        }
+      },
+      "playground": {
+        "live": "live playground",
+        "title": "Interactive about playground",
+        "subtitle": "Choose a command, click around, and explore my work.",
+        "hint": "Click a command below — explore who I am, how I work, and what I ship.",
+        "prompt": "Curious? Try the interactive playground — commands stay in English, content follows your language.",
+        "run": "Run command",
+        "surprise": "Surprise me",
+        "whoami": {
+          "line1": "Ziad · Software Engineer · Egypt",
+          "line2": "Focus: full-stack web products with clean UI + solid DX.",
+          "line3": "Status: available for work."
+        },
+        "stack": {
+          "intro": "Core stack loaded. Click a tool to inspect it.",
+          "items": {
+            "nextjs": "App Router, SSR/SSG, and production-ready routing.",
+            "react": "Component systems, state, and interactive UI.",
+            "typescript": "Typed contracts that keep large codebases honest.",
+            "nodejs": "APIs, auth flows, and backend glue that stays maintainable.",
+            "tailwind": "Fast, consistent styling without fighting the design system.",
+            "figma": "Design-to-code translation with pixel-level care."
+          }
+        },
+        "impact": {
+          "intro": "Numbers from recent shipped work:"
+        },
+        "craft": {
+          "intro": "Pick a focus area — switch modes to see how I think."
+        }
+      },
+      "primaryCta": "More information",
+      "secondaryCta": "Contact me"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Let's build something",
+      "titleAccent": "worth shipping.",
+      "available": "Available for new work",
+      "description": "Have a project, role, or idea in mind? Reach out and I'll get back to you soon.",
+      "primaryCta": "Email me",
+      "secondaryCta": "Download CV",
+      "meta": {
+        "responseLabel": "Response time",
+        "responseValue": "Usually within 24 hours",
+        "basedLabel": "Based in",
+        "basedValue": "Egypt · remote-friendly"
+      }
+    }
+  },
+  "AboutPage": {
+    "eyebrow": "About",
+    "title": "Building clean, scalable web experiences",
+    "description": "I'm Ziad, a Software Engineer focused on frontend craft and solid product architecture. I work mainly with Next.js, React, TypeScript, and Node.js — from translating Figma into production UI to shaping APIs and performance. I care about clear interfaces, maintainable code, and shipping work that feels intentional.",
+    "cta": "Contact me"
+  },
+  "Header": {
+    "brandName": "Ziad.dev",
+    "brandRole": "Software Engineer",
+    "navAriaLabel": "Main navigation",
+    "nav": {
+      "home": "Home",
+      "work": "Work",
+      "skills": "Skills",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "cta": "Hire me",
+    "available": "Available for work",
+    "language": "Language",
+    "switchDark": "Switch to dark mode",
+    "switchLight": "Switch to light mode",
+    "openMenu": "Open menu",
+    "menuTitle": "Navigation",
+    "menuDescription": "Jump around the portfolio."
   }
 }
