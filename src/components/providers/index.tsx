@@ -1,39 +1,30 @@
-import NextAuthProvider from "./components/next-auth.provider";
-import {
-  Locale,
-  NextIntlClientProvider,
-  useLocale,
-  useMessages,
-  useNow,
-  useTimeZone,
-} from "next-intl";
+import { NuqsAdapter } from "nuqs/adapters/react";
 import ReactQueryProvider from "./components/react-query.provider";
-import { getFormats } from "@/i18n/request";
+import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
+import { NextIntlClientProvider } from "next-intl";
 
-type ProvidersProps = {
+interface ProvidersProps {
   children: React.ReactNode;
-};
+}
 
 export default function Providers({ children }: ProvidersProps) {
-  // Translation
-  const messages = useMessages();
-  const locale = useLocale() as Locale;
-  const timezone = useTimeZone();
-  const now = useNow();
-
   return (
-    <ReactQueryProvider>
-      <NextAuthProvider>
-        <NextIntlClientProvider
-          messages={messages}
-          locale={locale}
-          timeZone={timezone}
-          now={now}
-          formats={getFormats(locale)}
-        >
-          {children}
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      scriptProps={{ async: true }}
+      value={{
+        light: "light",
+        dark: "dark",
+      }}
+    >
+      <NuqsAdapter>
+        <Toaster />
+        <NextIntlClientProvider>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
         </NextIntlClientProvider>
-      </NextAuthProvider>
-    </ReactQueryProvider>
+      </NuqsAdapter>
+    </ThemeProvider>
   );
 }

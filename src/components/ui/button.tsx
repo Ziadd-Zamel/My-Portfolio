@@ -1,43 +1,68 @@
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
+import { Slot } from "radix-ui";
 import { cva, type VariantProps } from "class-variance-authority";
-
-import { cn } from "@/lib/utils/tailwind-merge";
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg border border-transparent text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        brand:
+          "bg-brand text-brand-foreground shadow-[0_8px_20px_-10px_var(--glow-brand)] hover:bg-brand-hover",
+        copper:
+          "bg-copper text-copper-foreground shadow-[0_8px_20px_-10px_var(--glow-copper)] hover:bg-copper-hover",
+        outline:
+          "border-line bg-canvas-raised text-ink hover:border-brand/40 hover:text-brand",
+        ghost: "text-ink hover:bg-canvas-muted hover:text-brand",
+        soft: "bg-brand-subtle text-brand hover:bg-brand-muted/30",
+        "copper-soft": "bg-copper-subtle text-copper hover:bg-copper-muted/30",
+        danger:
+          "bg-danger text-ink-inverse hover:brightness-110 focus-visible:ring-danger/40",
+        "danger-soft":
+          "bg-danger-subtle text-danger hover:brightness-95 focus-visible:ring-danger/40",
+        success: "bg-success text-ink-inverse hover:brightness-110",
+        link: "h-auto border-transparent bg-transparent p-0 text-brand underline-offset-4 hover:underline",
+        inverse:
+          "bg-canvas-inverse text-ink-inverse hover:bg-ink-secondary dark:hover:bg-ink-muted",
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        sm: "h-8 gap-1.5 px-3 text-xs",
+        lg: "h-11 px-5 text-base",
+        icon: "size-10",
+        "icon-sm": "size-8",
+        "icon-lg": "size-11",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "brand",
       size: "default",
     },
-  }
+  },
 );
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+function Button({
+  className,
+  variant = "brand",
+  size = "default",
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+  }) {
+  const Comp = asChild ? Slot.Root : "button";
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : "button";
-  return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
-});
-Button.displayName = "Button";
+  return (
+    <Comp
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
 
 export { Button, buttonVariants };

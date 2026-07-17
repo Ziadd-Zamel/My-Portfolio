@@ -1,6 +1,6 @@
 import "./globals.css";
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;

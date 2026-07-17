@@ -1,47 +1,36 @@
-This is a [Next.js](https://nextjs.org) project initialized alongside most common community libraries for **Elevate** students. It shows how the structure of an enterprise business project should be, and how we can write clean code in React.js and Next.js.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-**First**, install yarn package manager:
+First, run the development server:
 
 ```bash
-npm i -g yarn
-```
-
-**Second**, delete the `package-lock.json` file.
-
-**Third**, install all dependencies using yarn:
-
-```bash
-yarn install
-```
-
-**Lastly**, run the project using yarn:
-
-```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Code Organization Guidelines
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Please ensure that the code in **hooks** and **components** is consistently organized in the following order:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. **Translation** – Import and define any translation-related logic.
-2. **Navigation** – Define any navigation-related logic or hooks.
-3. **State** – Declare local or global state variables.
-4. **Context** – Use context providers and consumers.
-5. **Hooks** – Call custom and built-in React hooks.
-6. **Ref** – Declare and manage `ref` objects.
-7. **Queries** – Handle data fetching queries (e.g., using React Query).
-8. **Mutation** – Handle data mutation logic (e.g., using React Query).
-9. **Form & Validation** – Set up form state and validation (e.g., using `react-hook-form`, `zod`).
-10. **Variables** – Define any constants or variables (this is flexible based on context).
-11. **Functions** – Define utility functions or component-specific functions.
-12. **Effects** – Use `useEffect` or similar side-effect hooks at the end.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Following this order helps maintain code consistency, improves readability, and makes it easier to debug and scale the project.
+## Learn More
 
-## Resources
+To learn more about Next.js, take a look at the following resources:
 
-1. **Project #1 - Exam App**: [Figma Design](https://www.figma.com/design/jJl1SNjeasOAF0WSlK8epD/Exam-Online-Elevate?node-id=0-1&t=S7I2ScakQLuXTMqI-1) - [API Docs](https://documenter.getpostman.com/view/5709532/2sAXxMfYUf)
-2. **Project #2 - Flower App**: [Figma Design](https://www.figma.com/design/QqsPTLi6eOzPXy3uueAg67/Rose?node-id=0-1&t=5euUht8bw4zd4s8z-1) - [API Docs](https://documenter.getpostman.com/view/5709532/2sAY52cKZg)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

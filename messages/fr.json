@@ -1,0 +1,153 @@
+{
+  "HomePage": {
+    "hero": {
+      "available": "Disponible",
+      "greeting": "Salut, moi c'est",
+      "name": "Ziad",
+      "role": "Ingénieur logiciel",
+      "description": "Je conçois et développe des applications web rapides et accessibles avec Next.js, React et TypeScript — en transformant les idées en interfaces soignées et produits évolutifs.",
+      "primaryCta": "Voir mes projets",
+      "secondaryCta": "Me contacter",
+      "stats": {
+        "experience": "Ans d'expérience",
+        "projects": "Projets livrés",
+        "clients": "Clients satisfaits"
+      },
+      "card": {
+        "title": "developer.ts",
+        "comment": "// construire le web, un composant à la fois"
+      }
+    },
+    "featuredProjects": {
+      "title": "Projets en vedette",
+      "allTitle": "Tous les projets",
+      "allDescription": "Une collection complète de travaux sélectionnés — explorez chaque projet en détail.",
+      "viewAll": "Voir tout",
+      "details": "Voir les détails du projet"
+    },
+    "about": {
+      "eyebrow": "À propos",
+      "available": "Disponible",
+      "role": "Ingénieur logiciel",
+      "location": "Égypte",
+      "title": "Je transforme les idées en",
+      "titleAccent": "produits livrés.",
+      "description": "Avec plus de 3 ans d'expérience, je conçois et construis des applications web full-stack avec Next.js, React et Node.js. J'ai livré plus de 40 projets — de Figma à une UI soignée, des APIs solides et des fonctionnalités qui font bouger les métriques.",
+      "highlights": {
+        "experience": "Ans d'expérience",
+        "projects": "Projets livrés",
+        "performance": "Chargement plus rapide",
+        "efficiency": "Efficacité d'équipe"
+      },
+      "pillars": {
+        "ui": {
+          "title": "Craft d'interface",
+          "description": "UI propre et accessible avec une hiérarchie visuelle forte."
+        },
+        "architecture": {
+          "title": "Architecture solide",
+          "description": "Frontends maintenables et APIs évolutives sur lesquelles les équipes comptent."
+        },
+        "performance": {
+          "title": "Performance d'abord",
+          "description": "Chargements rapides, UX fluide et code facile à faire évoluer."
+        }
+      },
+      "playground": {
+        "live": "playground actif",
+        "title": "Playground interactif à propos",
+        "subtitle": "Choisissez une commande, cliquez et explorez mon travail.",
+        "hint": "Cliquez une commande ci-dessous — explorez qui je suis, comment je travaille, et ce que je livre.",
+        "prompt": "Curieux ? Essayez le playground — les commandes restent en anglais, le contenu suit votre langue.",
+        "run": "Lancer une commande",
+        "surprise": "Surprenez-moi",
+        "whoami": {
+          "line1": "Ziad · Ingénieur logiciel · Égypte",
+          "line2": "Focus : produits web full-stack avec UI propre + DX solide.",
+          "line3": "Statut : disponible."
+        },
+        "stack": {
+          "intro": "Stack chargée. Cliquez un outil pour l'inspecter.",
+          "items": {
+            "nextjs": "App Router, SSR/SSG, et routing prêt pour la prod.",
+            "react": "Systèmes de composants, state, et UI interactive.",
+            "typescript": "Contrats typés qui gardent les gros codebases honnêtes.",
+            "nodejs": "APIs, auth, et backend maintenable.",
+            "tailwind": "Style rapide et cohérent sans lutter contre le design system.",
+            "figma": "Passage design → code avec soin pixel-level."
+          }
+        },
+        "impact": {
+          "intro": "Chiffres issus de livraisons récentes :"
+        },
+        "craft": {
+          "intro": "Choisissez un focus — changez de mode pour voir ma façon de penser."
+        }
+      },
+      "primaryCta": "Plus d'informations",
+      "secondaryCta": "Me contacter"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Construisons quelque chose",
+      "titleAccent": "qui mérite d'être livré.",
+      "available": "Disponible pour de nouveaux projets",
+      "description": "Un projet, un poste ou une idée ? Écrivez-moi, je vous répondrai rapidement.",
+      "primaryCta": "M'écrire",
+      "secondaryCta": "Télécharger le CV",
+      "meta": {
+        "responseLabel": "Temps de réponse",
+        "responseValue": "En général sous 24 heures",
+        "basedLabel": "Basé en",
+        "basedValue": "Égypte · ouvert au remote"
+      }
+    }
+  },
+  "AboutPage": {
+    "eyebrow": "À propos",
+    "title": "Construire des expériences web propres et évolutives",
+    "description": "Je suis Ziad, ingénieur logiciel centré sur le craft frontend et une architecture produit solide. Je travaille principalement avec Next.js, React, TypeScript et Node.js — du passage de Figma à l'UI de production jusqu'aux APIs et à la performance. Je vise des interfaces claires, un code maintenable, et un travail qui se sent intentionnel.",
+    "cta": "Me contacter"
+  },
+  "ProjectDetails": {
+    "back": "Retour aux projets",
+    "visitLive": "Voir le site live",
+    "galleryEmpty": "Plus de captures bientôt.",
+    "video": "Aperçu du projet",
+    "metaTitle": "Détails du projet",
+    "type": "Type de projet",
+    "team": "Taille de l'équipe",
+    "completed": "Livré",
+    "skills": "Compétences utilisées",
+    "links": "Liens du projet",
+    "overview": "Aperçu du projet",
+    "features": "Fonctionnalités clés",
+    "challenges": "Défis & solutions",
+    "tags": {
+      "team": "Équipe",
+      "fullStack": "Développement complet",
+      "solo": "Solo",
+      "frontend": "Frontend"
+    }
+  },
+  "Header": {
+    "brandName": "Ziad.dev",
+    "brandRole": "Ingénieur logiciel",
+    "navAriaLabel": "Navigation principale",
+    "nav": {
+      "home": "Accueil",
+      "work": "Projets",
+      "skills": "Compétences",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "cta": "Me recruter",
+    "available": "Disponible",
+    "language": "Langue",
+    "switchDark": "Passer au mode sombre",
+    "switchLight": "Passer au mode clair",
+    "openMenu": "Ouvrir le menu",
+    "menuTitle": "Navigation",
+    "menuDescription": "Naviguez dans le portfolio."
+  }
+}

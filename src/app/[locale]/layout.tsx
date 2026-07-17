@@ -1,45 +1,97 @@
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
+import type { Metadata } from "next";
+import { DM_Sans, Geist_Mono, Inter, Zain } from "next/font/google";
 import Providers from "@/components/providers";
-import { routing } from "@/i18n/routing";
-import { Metadata } from "next";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 import { hasLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 
-export async function generateMetadata(): Promise<Metadata> {
-  // Translation
-  const t = await getTranslations();
+const zain = Zain({
+  subsets: ["arabic"],
+  variable: "--font-zain",
+  weight: ["400", "700", "800"],
+});
 
-  // Variables
-  const title = t("application-title");
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-en",
+  weight: ["400", "500", "600", "700"],
+});
 
-  return {
-    title,
-  };
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-fr",
+  weight: ["400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Personal portfolio",
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-export default function LocaleLayout({
+export default async function RootLayout({
   children,
-  params: { locale },
-}: LayoutProps) {
-  // Ensure that the incoming `locale` is valid
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}>) {
+  const { locale } = await params;
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
+  setRequestLocale(locale);
+
+  const localeBodyFont =
+    locale === "ar"
+      ? zain.className
+      : locale === "fr"
+        ? dmSans.className
+        : inter.className;
+
+  const fontSansBody =
+    locale === "ar"
+      ? "var(--font-zain), system-ui, sans-serif"
+      : locale === "fr"
+        ? "var(--font-fr), ui-sans-serif, system-ui, sans-serif"
+        : "var(--font-en), ui-sans-serif, system-ui, sans-serif";
+
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+      className={cn(
+        "h-full antialiased",
+        zain.variable,
+        inter.variable,
+        dmSans.variable,
+        geistMono.variable,
+        localeBodyFont,
+      )}
+      style={{ "--font-sans-body": fontSansBody } as React.CSSProperties}
+    >
       <body>
         <Providers>
-          {/* Header */}
-          <Header />
-
-          {/* Main */}
-          {children}
-
-          {/* Footer */}
-          <Footer />
+          <div className="flex min-h-screen min-w-0 flex-col overflow-x-hidden">
+            <Header />
+            <main className="min-w-0 flex flex-1 flex-col">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
