@@ -23,24 +23,7 @@
       "allTitle": "All Projects",
       "allDescription": "A full collection of selected work — explore every project in detail.",
       "viewAll": "View All",
-      "details": "View project details",
-      "items": {
-        "pulse-analytics": {
-          "category": "SaaS Dashboard",
-          "title": "Pulse Analytics",
-          "description": "A real-time analytics dashboard built for teams that need clarity at speed. It combines clean charting, role-based access, and fast filtering so users can move from raw data to decisions without friction. The interface stays lightweight while still supporting complex views, saved filters, and responsive layouts across devices."
-        },
-        "atelier-studio": {
-          "category": "Marketing Site",
-          "title": "Atelier Studio",
-          "description": "A polished agency website designed to feel premium and conversion-focused. Smooth motion, structured case studies, and a clear contact flow guide visitors from first impression to inquiry. Every section is crafted to showcase craft, build trust, and keep the brand voice consistent from landing page to project details."
-        },
-        "flowdesk": {
-          "category": "Productivity",
-          "title": "FlowDesk",
-          "description": "A lightweight project workspace for teams who want focus without clutter. Boards, tasks, and collaboration tools stay simple and fast so work stays organized without heavy process. Built for day-to-day shipping, it helps teams plan, track progress, and stay aligned across projects with a calm, usable interface."
-        }
-      }
+      "details": "View project details"
     },
     "about": {
       "eyebrow": "About me",
@@ -125,6 +108,27 @@
     "title": "Building clean, scalable web experiences",
     "description": "I'm Ziad, a Software Engineer focused on frontend craft and solid product architecture. I work mainly with Next.js, React, TypeScript, and Node.js — from translating Figma into production UI to shaping APIs and performance. I care about clear interfaces, maintainable code, and shipping work that feels intentional.",
     "cta": "Contact me"
+  },
+  "ProjectDetails": {
+    "back": "Back to projects",
+    "visitLive": "Visit live site",
+    "galleryEmpty": "More screenshots coming soon.",
+    "video": "Project preview",
+    "metaTitle": "Project details",
+    "type": "Project type",
+    "team": "Team size",
+    "completed": "Completed",
+    "skills": "Skills used",
+    "links": "Project links",
+    "overview": "Project overview",
+    "features": "Key features",
+    "challenges": "Challenges & solutions",
+    "tags": {
+      "team": "Team",
+      "fullStack": "Full development",
+      "solo": "Solo",
+      "frontend": "Frontend"
+    }
   },
   "Header": {
     "brandName": "Ziad.dev",

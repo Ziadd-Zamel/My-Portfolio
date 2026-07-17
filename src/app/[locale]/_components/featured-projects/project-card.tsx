@@ -1,7 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import Image from "next/image";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { FEATURED_PROJECTS } from "@/components/constants/home-page.constant";
+import {
+  getProjectById,
+  getProjectContent,
+} from "@/components/constants/projects";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -101,7 +106,13 @@ export async function ProjectCard({
   index: number;
 }) {
   const t = await getTranslations("HomePage.featuredProjects");
+  const locale = await getLocale();
+  const full = getProjectById(project.id);
+  const content = full
+    ? getProjectContent(full, locale)
+    : { category: "", title: project.id, cardDescription: "" };
   const a = accents[project.accent];
+  const image = project.image;
 
   return (
     <Link
@@ -121,27 +132,40 @@ export async function ProjectCard({
             a.wash,
           )}
         >
-          <div
-            aria-hidden
-            className={cn(
-              "pointer-events-none absolute -top-12 -inset-e-10 size-44 rounded-full blur-3xl",
-              a.glow,
-            )}
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt=""
+              fill
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              priority={index === 0}
+            />
+          ) : (
+            <>
+              <div
+                aria-hidden
+                className={cn(
+                  "pointer-events-none absolute -top-12 -inset-e-10 size-44 rounded-full blur-3xl",
+                  a.glow,
+                )}
+              />
 
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(0_0_0/0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgb(0_0_0/0.035)_1px,transparent_1px)] bg-size-[20px_20px] dark:bg-[linear-gradient(to_right,rgb(255_255_255/0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.045)_1px,transparent_1px)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(0_0_0/0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgb(0_0_0/0.035)_1px,transparent_1px)] bg-size-[20px_20px] dark:bg-[linear-gradient(to_right,rgb(255_255_255/0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.045)_1px,transparent_1px)]" />
 
-          <div className="absolute inset-x-5 top-5 bottom-0 translate-y-4 rounded-t-xl border border-line/80 bg-canvas/95 p-3 shadow-[0_18px_40px_-24px_rgb(0_0_0/0.35)] transition-transform duration-500 group-hover:translate-y-2 dark:bg-canvas-muted/95">
-            <div className="mb-3 flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-danger/70" />
-              <span className="size-2 rounded-full bg-warning/70" />
-              <span className="size-2 rounded-full bg-success/70" />
-              <span className="ms-2 h-1.5 w-20 rounded-full bg-line" />
-            </div>
-            <MockContent accent={project.accent} />
-          </div>
+              <div className="absolute inset-x-5 top-5 bottom-0 translate-y-4 rounded-t-xl border border-line/80 bg-canvas/95 p-3 shadow-[0_18px_40px_-24px_rgb(0_0_0/0.35)] transition-transform duration-500 group-hover:translate-y-2 dark:bg-canvas-muted/95">
+                <div className="mb-3 flex items-center gap-1.5">
+                  <span className="size-2 rounded-full bg-danger/70" />
+                  <span className="size-2 rounded-full bg-warning/70" />
+                  <span className="size-2 rounded-full bg-success/70" />
+                  <span className="ms-2 h-1.5 w-20 rounded-full bg-line" />
+                </div>
+                <MockContent accent={project.accent} />
+              </div>
+            </>
+          )}
 
-          <span className="absolute inset-s-4 top-4 rounded-md border border-line bg-canvas/85 px-2 py-1 font-mono text-[11px] font-semibold text-ink-muted backdrop-blur">
+          <span className="absolute inset-s-4 top-4 z-10 rounded-md border border-line bg-canvas/85 px-2 py-1 font-mono text-[11px] font-semibold text-ink-muted backdrop-blur">
             {String(index + 1).padStart(2, "0")} / {project.year}
           </span>
         </div>
@@ -153,15 +177,15 @@ export async function ProjectCard({
               a.text,
             )}
           >
-            {t(`items.${project.id}.category`)}
+            {content.category}
           </p>
 
           <h3 className="mt-2 text-xl font-bold tracking-tight text-ink transition-colors group-hover:text-brand">
-            {t(`items.${project.id}.title`)}
+            {content.title}
           </h3>
 
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">
-            {t(`items.${project.id}.description`)}
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted line-clamp-4">
+            {content.cardDescription}
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">

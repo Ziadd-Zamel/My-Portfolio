@@ -23,24 +23,7 @@
       "allTitle": "Tous les projets",
       "allDescription": "Une collection complète de travaux sélectionnés — explorez chaque projet en détail.",
       "viewAll": "Voir tout",
-      "details": "Voir les détails du projet",
-      "items": {
-        "pulse-analytics": {
-          "category": "Tableau SaaS",
-          "title": "Pulse Analytics",
-          "description": "Un tableau d'analytics en temps réel conçu pour les équipes qui ont besoin de clarté et de vitesse. Il combine des graphiques nets, des rôles d'accès et un filtrage rapide pour passer des données brutes à la décision sans friction. L'interface reste légère tout en supportant des vues complexes, des filtres sauvegardés et des layouts responsives."
-        },
-        "atelier-studio": {
-          "category": "Site marketing",
-          "title": "Atelier Studio",
-          "description": "Un site d'agence soigné, pensé pour un rendu premium et la conversion. Motion fluide, études de cas structurées et parcours contact clair guident le visiteur de la première impression à la prise de contact. Chaque section met en avant le craft, renforce la confiance et garde une voix de marque cohérente jusqu'aux détails projet."
-        },
-        "flowdesk": {
-          "category": "Productivité",
-          "title": "FlowDesk",
-          "description": "Un espace projet léger pour les équipes qui veulent rester concentrées sans surcharge. Boards, tâches et collaboration restent simples et rapides pour organiser le travail sans process lourds. Pensé pour le quotidien, il aide à planifier, suivre l'avancement et rester aligné sur les projets avec une interface calme et utilisable."
-        }
-      }
+      "details": "Voir les détails du projet"
     },
     "about": {
       "eyebrow": "À propos",
@@ -125,6 +108,27 @@
     "title": "Construire des expériences web propres et évolutives",
     "description": "Je suis Ziad, ingénieur logiciel centré sur le craft frontend et une architecture produit solide. Je travaille principalement avec Next.js, React, TypeScript et Node.js — du passage de Figma à l'UI de production jusqu'aux APIs et à la performance. Je vise des interfaces claires, un code maintenable, et un travail qui se sent intentionnel.",
     "cta": "Me contacter"
+  },
+  "ProjectDetails": {
+    "back": "Retour aux projets",
+    "visitLive": "Voir le site live",
+    "galleryEmpty": "Plus de captures bientôt.",
+    "video": "Aperçu du projet",
+    "metaTitle": "Détails du projet",
+    "type": "Type de projet",
+    "team": "Taille de l'équipe",
+    "completed": "Livré",
+    "skills": "Compétences utilisées",
+    "links": "Liens du projet",
+    "overview": "Aperçu du projet",
+    "features": "Fonctionnalités clés",
+    "challenges": "Défis & solutions",
+    "tags": {
+      "team": "Équipe",
+      "fullStack": "Développement complet",
+      "solo": "Solo",
+      "frontend": "Frontend"
+    }
   },
   "Header": {
     "brandName": "Ziad.dev",

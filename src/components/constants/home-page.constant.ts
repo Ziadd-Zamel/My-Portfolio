@@ -50,26 +50,7 @@ export const CONTACT_CHANNELS = [
 
 export const CONTACT_INTENTS = ["project", "hire", "chat", "collab"] as const;
 
-export const FEATURED_PROJECTS = [
-  {
-    id: "pulse-analytics",
-    year: "2025",
-    tech: ["Next.js", "TypeScript", "Recharts"],
-    accent: "brand",
-  },
-  {
-    id: "atelier-studio",
-    year: "2024",
-    tech: ["React", "Tailwind", "Framer Motion"],
-    accent: "copper",
-  },
-  {
-    id: "flowdesk",
-    year: "2024",
-    tech: ["Next.js", "Node.js", "PostgreSQL"],
-    accent: "info",
-  },
-] as const;
+export { FEATURED_PROJECTS } from "./projects";
 
 export const ABOUT_HIGHLIGHTS = [
   { key: "experience", value: "3+" },
