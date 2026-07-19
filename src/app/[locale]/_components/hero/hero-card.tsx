@@ -1,14 +1,16 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { CODE_LINES } from "@/components/constants/home-page.constant";
 
-export async function HeroCard() {
-  const t = await getTranslations("HomePage");
+export function HeroCard() {
+  const t = useTranslations("HomePage");
 
   return (
     <div className="relative">
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-4 rounded-3xl bg-brand/8 blur-2xl dark:bg-brand/6"
+        className="motion-glow pointer-events-none absolute -inset-4 rounded-3xl bg-brand/8 blur-2xl dark:bg-brand/6"
       />
       <div className="relative overflow-hidden rounded-2xl border border-line bg-canvas-raised shadow-[0_24px_60px_-44px_var(--glow-brand)]">
         <div className="flex items-center gap-2 border-b border-line px-4 py-3">
@@ -26,7 +28,11 @@ export async function HeroCard() {
         >
           <code>
             {CODE_LINES.map((line, i) => (
-              <span key={i} className="block">
+              <span
+                key={i}
+                className="motion-code-line block"
+                style={{ animationDelay: `${520 + i * 70}ms` }}
+              >
                 <span className="me-4 select-none text-ink-faint">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -37,7 +43,10 @@ export async function HeroCard() {
                 ))}
               </span>
             ))}
-            <span className="mt-3 block text-ink-faint">
+            <span
+              className="motion-code-line mt-3 block text-ink-faint"
+              style={{ animationDelay: `${520 + CODE_LINES.length * 70}ms` }}
+            >
               {t("hero.card.comment")}
             </span>
           </code>
