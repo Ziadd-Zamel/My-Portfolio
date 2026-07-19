@@ -169,7 +169,7 @@ export function SkillsShowcase() {
   }
 
   return (
-    <div className="mt-12 space-y-10">
+    <div className="space-y-10">
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {FEATURED_SKILLS.map((skill) => (
           <FeaturedTile

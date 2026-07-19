@@ -7,6 +7,7 @@ import {
 } from "@/components/constants/projects";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { Reveal } from "@/components/motion/reveal";
 import { ProjectCardMedia } from "./project-card-media";
 import { ProjectCompanyBadge } from "./project-company-badge";
 
@@ -238,23 +239,31 @@ export default async function FeaturedProjectsSection() {
       className="relative scroll-mt-24 bg-canvas py-16 sm:py-20"
     >
       <div className="box-container">
-        <div className="mb-10 flex items-end justify-between gap-4">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            {t("title")}
-          </h2>
+        <Reveal variant="blur">
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              {t("title")}
+            </h2>
 
-          <Link
-            href="/projects"
-            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-opacity hover:opacity-80"
-          >
-            {t("viewAll")}
-            <ArrowRight className="size-4 rtl:rotate-180" />
-          </Link>
-        </div>
+            <Link
+              href="/projects"
+              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-opacity hover:opacity-80"
+            >
+              {t("viewAll")}
+              <ArrowRight className="size-4 rtl:rotate-180" />
+            </Link>
+          </div>
+        </Reveal>
 
         <div className="grid gap-5">
           {FEATURED_PROJECTS.map((project, index) => (
-            <ProjectRowCard key={project.id} project={project} index={index} />
+            <Reveal
+              key={project.id}
+              delay={index * 120}
+              variant={index % 2 === 0 ? "up" : "left"}
+            >
+              <ProjectRowCard project={project} index={index} />
+            </Reveal>
           ))}
         </div>
       </div>
