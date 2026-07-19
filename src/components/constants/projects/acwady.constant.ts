@@ -5,10 +5,20 @@ export const ACWADY_PROJECT: ProjectContent = {
   year: "2025",
   completedAt: "2025",
   accent: "info",
-  coverImage: "/assets/acwady/main-preview.png",
+  coverImage: "/assets/acwady/brand/main-preview.png",
   videoUrl: "https://www.youtube.com/watch?v=DucQwagcgXk",
-  /** Drop screenshot paths here later — e.g. "/assets/acwady/01-homepage.png" */
-  gallery: [],
+  gallery: [
+    "/assets/acwady/pages/page-1.png",
+    "/assets/acwady/pages/page-2.png",
+    "/assets/acwady/pages/page-3.png",
+    "/assets/acwady/pages/page-4.png",
+    "/assets/acwady/pages/page-5.png",
+    "/assets/acwady/pages/page-6.png",
+    "/assets/acwady/pages/page-7.png",
+    "/assets/acwady/pages/page-8.png",
+    "/assets/acwady/pages/page-9.png",
+    "/assets/acwady/pages/page-10.png",
+  ],
   tech: [
     "Next.js 15",
     "React 19",

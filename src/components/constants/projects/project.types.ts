@@ -61,3 +61,28 @@ export function getYouTubeEmbedId(url: string): string | null {
   }
   return null;
 }
+
+/** Resolves YouTube or Google Drive preview/embed URLs for an iframe */
+export function getVideoEmbedSrc(url: string): string | null {
+  const youtubeId = getYouTubeEmbedId(url);
+  if (youtubeId) {
+    return `https://www.youtube.com/embed/${youtubeId}`;
+  }
+
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname.includes("drive.google.com")) {
+      const fileMatch = parsed.pathname.match(/\/file\/d\/([^/]+)/);
+      if (fileMatch?.[1]) {
+        return `https://drive.google.com/file/d/${fileMatch[1]}/preview`;
+      }
+      if (parsed.pathname.includes("/preview")) {
+        return `${parsed.origin}${parsed.pathname}`;
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}

@@ -1,15 +1,15 @@
 import { ACWADY_PROJECT } from "./acwady.constant";
-import { ATELIER_STUDIO_PROJECT } from "./atelier-studio.constant";
-import { FLOWDESK_PROJECT } from "./flowdesk.constant";
+import { HIGH_COURT_PROJECT } from "./high-court.constant";
+import { TIBBI_PROJECT } from "./tibbi.constant";
 import type { ProjectContent } from "./project.types";
 
 export type { ProjectContent, ProjectLocalizedContent, ProjectAccent } from "./project.types";
-export { getProjectContent, getYouTubeEmbedId } from "./project.types";
+export { getProjectContent, getYouTubeEmbedId, getVideoEmbedSrc } from "./project.types";
 
 export const PROJECTS: ProjectContent[] = [
   ACWADY_PROJECT,
-  ATELIER_STUDIO_PROJECT,
-  FLOWDESK_PROJECT,
+  TIBBI_PROJECT,
+  HIGH_COURT_PROJECT,
 ];
 
 export function getProjectById(id: string): ProjectContent | undefined {
