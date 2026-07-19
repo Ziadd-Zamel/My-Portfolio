@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,17 +15,38 @@ import {
 } from "@/components/ui/sheet";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { NAV_ITEMS } from "../config";
+import { SOCIAL_LINKS } from "@/components/constants/home-page.constant";
+import { NAV_ITEMS, getNavHref, type NavItem } from "../config";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
 
-function isActive(pathname: string, href: string) {
-  return href === "/" ? pathname === "/" || pathname === "" : false;
+const whatsapp = SOCIAL_LINKS.find((link) => link.key === "whatsapp")!;
+
+function isHome(pathname: string) {
+  return pathname === "/" || pathname === "";
+}
+
+function isActive(pathname: string, item: NavItem) {
+  return !("hash" in item) && isHome(pathname);
+}
+
+function scrollToSection(hash: string) {
+  const el = document.getElementById(hash);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.history.replaceState(null, "", `#${hash}`);
 }
 
 export function MobileMenu() {
   const t = useTranslations("Header");
   const pathname = usePathname();
+
+  function onSectionClick(event: MouseEvent<HTMLAnchorElement>, item: NavItem) {
+    if (!("hash" in item) || !item.hash) return;
+    if (!isHome(pathname)) return;
+    event.preventDefault();
+    scrollToSection(item.hash);
+  }
 
   return (
     <div className="flex items-center gap-1 lg:hidden">
@@ -43,25 +65,19 @@ export function MobileMenu() {
 
           <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
             {NAV_ITEMS.map((item) => {
-              const active = isActive(pathname, item.href);
+              const active = isActive(pathname, item);
               const className = cn(
                 "rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-muted transition-colors hover:bg-canvas-muted hover:text-ink",
                 active && "bg-brand-subtle text-brand",
               );
 
-              if (item.href.startsWith("#")) {
-                return (
-                  <SheetClose key={item.key} asChild>
-                    <a href={item.href} className={className}>
-                      {t(`nav.${item.key}`)}
-                    </a>
-                  </SheetClose>
-                );
-              }
-
               return (
                 <SheetClose key={item.key} asChild>
-                  <Link href={item.href} className={className}>
+                  <Link
+                    href={getNavHref(item)}
+                    className={className}
+                    onClick={(event) => onSectionClick(event, item)}
+                  >
                     {t(`nav.${item.key}`)}
                   </Link>
                 </SheetClose>
@@ -73,7 +89,7 @@ export function MobileMenu() {
             <div className="flex items-center gap-2">
               <LanguageSwitcher />
               <Button asChild className="flex-1">
-                <a href="#contact">
+                <a href={whatsapp.href} target="_blank" rel="noreferrer">
                   {t("cta")}
                   <ArrowUpRight className="size-4 rtl:-scale-x-100" />
                 </a>

@@ -1,49 +1,64 @@
 export const HERO_STATS = [
   { key: "experience", value: "3+" },
-  { key: "projects", value: "40+" },
-  { key: "clients", value: "9+" },
+  { key: "projects", value: "20+" },
+  { key: "clients", value: "6+" },
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { key: "github", label: "GitHub", href: "#" },
-  { key: "linkedin", label: "LinkedIn", href: "#" },
-  { key: "whatsapp", label: "WhatsApp", href: "#" },
+  {
+    key: "github",
+    label: "GitHub",
+    href: "https://github.com/Ziadd-Zamel",
+    logo: "/social/github.svg",
+  },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ziaddmahmoud/",
+    logo: "/social/linkedin.svg",
+  },
+  {
+    key: "whatsapp",
+    label: "WhatsApp",
+    href: "https://wa.me/201091732409",
+    logo: "/social/whatsapp.svg",
+  },
 ] as const;
 
 export const CONTACT_CHANNELS = [
   {
     key: "email",
     label: "Email",
-    value: "hello@ziad.dev",
-    href: "mailto:hello@ziad.dev",
+    value: "ziadzzamel@gmail.com",
+    href: "mailto:ziadzzamel@gmail.com",
     action: "copy",
   },
   {
     key: "whatsapp",
     label: "WhatsApp",
-    value: "WhatsApp",
-    href: "#",
+    value: "+20 109 173 2409",
+    href: "https://wa.me/201091732409",
     action: "open",
   },
   {
     key: "linkedin",
     label: "LinkedIn",
-    value: "linkedin.com/in/ziad",
-    href: "#",
+    value: "linkedin.com/in/ziaddmahmoud",
+    href: "https://www.linkedin.com/in/ziaddmahmoud/",
     action: "open",
   },
   {
     key: "github",
     label: "GitHub",
-    value: "github.com/ziad",
-    href: "#",
+    value: "github.com/Ziadd-Zamel",
+    href: "https://github.com/Ziadd-Zamel",
     action: "open",
   },
   {
     key: "cv",
     label: "CV",
     value: "ziad-cv.pdf",
-    href: "/cv.pdf",
+    href: "/ziad/ziad%20mahmoud%20Frontend%20Developer%20cv_251130_103619.pdf",
     action: "download",
   },
 ] as const;
@@ -54,7 +69,7 @@ export { FEATURED_PROJECTS } from "./projects";
 
 export const ABOUT_HIGHLIGHTS = [
   { key: "experience", value: "3+" },
-  { key: "projects", value: "40+" },
+  { key: "projects", value: "20+" },
   { key: "performance", value: "30%" },
   { key: "efficiency", value: "47%" },
 ] as const;
@@ -88,6 +103,18 @@ export const CODE_LINES = [
     { text: ",", cls: "text-ink-muted" },
   ],
   [
+    { text: "  company", cls: "text-brand" },
+    { text: ": ", cls: "text-ink-muted" },
+    { text: "'Acwady'", cls: "text-copper" },
+    { text: ",", cls: "text-ink-muted" },
+  ],
+  [
+    { text: "  since", cls: "text-brand" },
+    { text: ": ", cls: "text-ink-muted" },
+    { text: "'Jan 2026'", cls: "text-copper" },
+    { text: ",", cls: "text-ink-muted" },
+  ],
+  [
     { text: "  location", cls: "text-brand" },
     { text: ": ", cls: "text-ink-muted" },
     { text: "'Egypt'", cls: "text-copper" },
@@ -107,12 +134,6 @@ export const CODE_LINES = [
     { text: "  focus", cls: "text-brand" },
     { text: ": ", cls: "text-ink-muted" },
     { text: "'clean UI + DX'", cls: "text-copper" },
-    { text: ",", cls: "text-ink-muted" },
-  ],
-  [
-    { text: "  available", cls: "text-brand" },
-    { text: ": ", cls: "text-ink-muted" },
-    { text: "true", cls: "text-info" },
     { text: ",", cls: "text-ink-muted" },
   ],
   [{ text: "};", cls: "text-ink-muted" }],

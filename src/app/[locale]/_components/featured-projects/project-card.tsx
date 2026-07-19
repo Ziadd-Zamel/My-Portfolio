@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -9,6 +8,8 @@ import {
 } from "@/components/constants/projects";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { ProjectCardMedia } from "./project-card-media";
+import { ProjectCompanyBadge } from "./project-company-badge";
 
 type Project = (typeof ALL_PROJECTS)[number];
 
@@ -112,7 +113,7 @@ export async function ProjectCard({
     ? getProjectContent(full, locale)
     : { category: "", title: project.id, cardDescription: "" };
   const a = accents[project.accent];
-  const image = project.image;
+  const brandImages = project.brandImages;
 
   return (
     <Link
@@ -132,15 +133,14 @@ export async function ProjectCard({
             a.wash,
           )}
         >
-          {image ? (
-            <Image
-              src={image}
-              alt=""
-              fill
-              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-              sizes="(max-width: 768px) 100vw, 33vw"
-              priority={index === 0}
-            />
+          {brandImages.length > 0 ? (
+            <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.03]">
+              <ProjectCardMedia
+                images={brandImages}
+                priority={index === 0}
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
           ) : (
             <>
               <div
@@ -165,8 +165,8 @@ export async function ProjectCard({
             </>
           )}
 
-          <span className="absolute inset-s-4 top-4 z-10 rounded-md border border-line bg-canvas/85 px-2 py-1 font-mono text-[11px] font-semibold text-ink-muted backdrop-blur">
-            {String(index + 1).padStart(2, "0")} / {project.year}
+          <span className="absolute inset-s-4 top-4 z-10">
+            <ProjectCompanyBadge companyId={project.company} />
           </span>
         </div>
 

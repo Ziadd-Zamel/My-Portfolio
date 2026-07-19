@@ -22,12 +22,21 @@ export type ProjectLocalizedContent = {
 
 export type ProjectContent = {
   id: string;
-  year: string;
-  completedAt: string;
+  /** Company the work was done under — defaults to freelance until assigned */
+  company?: import("./companies.constant").CompanyId;
+  /** @deprecated Dates are hidden in the UI */
+  year?: string;
+  /** @deprecated Dates are hidden in the UI */
+  completedAt?: string;
   accent: ProjectAccent;
   /** When false, shown on /projects only — not on the home featured list */
   featured?: boolean;
   coverImage?: string;
+  /**
+   * Brand marketing shots for project cards (fade carousel).
+   * Pages/gallery screenshots stay in `gallery` only — never on cards.
+   */
+  brandImages?: string[];
   /** Optional YouTube (or similar) preview — omit when the project has no video */
   videoUrl?: string;
   /** Add screenshot paths later — gallery reads this array */

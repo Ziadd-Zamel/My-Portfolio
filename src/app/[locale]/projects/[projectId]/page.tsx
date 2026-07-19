@@ -1,5 +1,6 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -15,11 +16,35 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { buildPageMetadata, projectJsonLd } from "@/lib/seo";
 import { ProjectGallery } from "./_components/project-gallery";
 import { ProjectVideo } from "./_components/project-video";
+import { ProjectCompanyBadge } from "../../_components/featured-projects/project-company-badge";
 
 export function generateStaticParams() {
   return ALL_PROJECTS.map((project) => ({ projectId: project.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; projectId: string }>;
+}): Promise<Metadata> {
+  const { locale, projectId } = await params;
+  const project = getProjectById(projectId);
+  if (!project) return {};
+
+  const content = getProjectContent(project, locale);
+  const image =
+    project.coverImage ?? project.brandImages?.[0] ?? "/brand/logo-mark.png";
+
+  return buildPageMetadata({
+    locale,
+    path: `/projects/${project.id}`,
+    title: content.title,
+    description: content.cardDescription,
+    image,
+  });
 }
 
 const linkIcon = {
@@ -32,20 +57,38 @@ const linkIcon = {
 export default async function ProjectDetailsPage({
   params,
 }: {
-  params: Promise<{ projectId: string }>;
+  params: Promise<{ locale: string; projectId: string }>;
 }) {
-  const { projectId } = await params;
+  const { locale, projectId } = await params;
+  setRequestLocale(locale);
+
   const project = getProjectById(projectId);
 
   if (!project) notFound();
 
-  const locale = await getLocale();
   const content = getProjectContent(project, locale);
   const t = await getTranslations("ProjectDetails");
   const live = project.links.find((link) => link.kind === "live");
+  const image = project.coverImage ?? project.brandImages?.[0];
 
   return (
     <main className="relative overflow-hidden bg-canvas">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            projectJsonLd({
+              locale,
+              id: project.id,
+              title: content.title,
+              description: content.cardDescription,
+              image,
+              tech: project.tech,
+              liveUrl: live?.href,
+            }),
+          ),
+        }}
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-112 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklab,var(--brand)_14%,transparent),transparent_65%)]"
@@ -70,6 +113,7 @@ export default async function ProjectDetailsPage({
           </h1>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+            <ProjectCompanyBadge companyId={project.company} size="md" />
             {project.tags.map((tag) => (
               <Badge
                 key={tag}
@@ -124,6 +168,12 @@ export default async function ProjectDetailsPage({
             <section className="rounded-2xl border border-line bg-canvas-raised p-5 sm:p-6">
               <h2 className="text-base font-bold text-ink">{t("metaTitle")}</h2>
               <dl className="mt-4 space-y-3 text-sm">
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                  <dt className="text-ink-muted">{t("company")}</dt>
+                  <dd className="sm:text-end">
+                    <ProjectCompanyBadge companyId={project.company} />
+                  </dd>
+                </div>
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4">
                   <dt className="text-ink-muted">{t("type")}</dt>
                   <dd className="font-medium text-ink sm:text-end">
@@ -134,12 +184,6 @@ export default async function ProjectDetailsPage({
                   <dt className="text-ink-muted">{t("team")}</dt>
                   <dd className="font-medium text-ink sm:text-end">
                     {content.teamLabel}
-                  </dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4">
-                  <dt className="text-ink-muted">{t("completed")}</dt>
-                  <dd className="font-medium text-ink sm:text-end">
-                    {project.completedAt}
                   </dd>
                 </div>
               </dl>

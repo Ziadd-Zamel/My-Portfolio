@@ -1,5 +1,4 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { FEATURED_PROJECTS } from "@/components/constants/home-page.constant";
 import {
@@ -8,6 +7,9 @@ import {
 } from "@/components/constants/projects";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { Reveal } from "@/components/motion/reveal";
+import { ProjectCardMedia } from "./project-card-media";
+import { ProjectCompanyBadge } from "./project-company-badge";
 
 type Project = (typeof FEATURED_PROJECTS)[number];
 
@@ -105,7 +107,7 @@ function RowPreview({
   index: number;
 }) {
   const a = accents[project.accent];
-  const image = project.image;
+  const brandImages = project.brandImages;
 
   return (
     <div
@@ -114,15 +116,14 @@ function RowPreview({
         a.wash,
       )}
     >
-      {image ? (
-        <Image
-          src={image}
-          alt=""
-          fill
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-          sizes="(max-width: 768px) 100vw, 40vw"
-          priority={index === 0}
-        />
+      {brandImages.length > 0 ? (
+        <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.03]">
+          <ProjectCardMedia
+            images={brandImages}
+            priority={index === 0}
+            sizes="(max-width: 768px) 100vw, 40vw"
+          />
+        </div>
       ) : (
         <>
           <div
@@ -147,8 +148,8 @@ function RowPreview({
         </>
       )}
 
-      <span className="absolute inset-s-4 top-4 z-10 rounded-md border border-line bg-canvas/85 px-2 py-1 font-mono text-[11px] font-semibold text-ink-muted backdrop-blur">
-        {String(index + 1).padStart(2, "0")} / {project.year}
+      <span className="absolute inset-s-4 top-4 z-10">
+        <ProjectCompanyBadge companyId={project.company} />
       </span>
     </div>
   );
@@ -238,23 +239,31 @@ export default async function FeaturedProjectsSection() {
       className="relative scroll-mt-24 bg-canvas py-16 sm:py-20"
     >
       <div className="box-container">
-        <div className="mb-10 flex items-end justify-between gap-4">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            {t("title")}
-          </h2>
+        <Reveal variant="blur">
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              {t("title")}
+            </h2>
 
-          <Link
-            href="/projects"
-            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-opacity hover:opacity-80"
-          >
-            {t("viewAll")}
-            <ArrowRight className="size-4 rtl:rotate-180" />
-          </Link>
-        </div>
+            <Link
+              href="/projects"
+              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-opacity hover:opacity-80"
+            >
+              {t("viewAll")}
+              <ArrowRight className="size-4 rtl:rotate-180" />
+            </Link>
+          </div>
+        </Reveal>
 
         <div className="grid gap-5">
           {FEATURED_PROJECTS.map((project, index) => (
-            <ProjectRowCard key={project.id} project={project} index={index} />
+            <Reveal
+              key={project.id}
+              delay={index * 120}
+              variant={index % 2 === 0 ? "up" : "left"}
+            >
+              <ProjectRowCard project={project} index={index} />
+            </Reveal>
           ))}
         </div>
       </div>

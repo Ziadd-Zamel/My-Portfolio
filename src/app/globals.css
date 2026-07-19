@@ -365,6 +365,146 @@
   @apply mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
+/* ── Motion system ─────────────────────────────────────────────── */
+@keyframes motion-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motion-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes motion-slide-in-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes motion-blur-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes motion-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes motion-line-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes motion-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready {
+    opacity: 0;
+  }
+
+  .motion-ready[data-inview="true"] {
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .motion-ready[data-variant="up"][data-inview="true"] {
+    animation-name: motion-rise;
+    animation-duration: 0.7s;
+  }
+
+  .motion-ready[data-variant="blur"][data-inview="true"] {
+    animation-name: motion-blur-in;
+    animation-duration: 0.8s;
+  }
+
+  .motion-ready[data-variant="left"][data-inview="true"] {
+    animation-name: motion-slide-in;
+    animation-duration: 0.75s;
+  }
+
+  [dir="rtl"] .motion-ready[data-variant="left"][data-inview="true"] {
+    animation-name: motion-slide-in-rtl;
+  }
+
+  .motion-ready[data-variant="scale"][data-inview="true"] {
+    animation-name: motion-rise;
+    animation-duration: 0.65s;
+  }
+
+  .motion-float {
+    animation: motion-float 5.5s ease-in-out infinite;
+  }
+
+  .motion-glow {
+    animation: motion-glow-pulse 4.5s ease-in-out infinite;
+  }
+
+  .motion-code-line {
+    opacity: 0;
+    animation: motion-line-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready,
+  .motion-float,
+  .motion-glow,
+  .motion-code-line {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

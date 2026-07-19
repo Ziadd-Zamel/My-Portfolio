@@ -2,10 +2,18 @@ import type { ProjectContent } from "./project.types";
 
 export const TIBBI_PROJECT: ProjectContent = {
   id: "tibbi",
+  company: "evyx",
   year: "2025",
   completedAt: "2025",
   accent: "brand",
   coverImage: "/assets/tibbi/brand/main.png",
+  brandImages: [
+    "/assets/tibbi/brand/main.png",
+    "/assets/tibbi/brand/main-splash.png",
+    "/assets/tibbi/brand/sub-preview.png",
+    "/assets/tibbi/brand/third-preview.png",
+    "/assets/tibbi/brand/force-preview.png",
+  ],
   gallery: [
     "/assets/tibbi/brand/main-splash.png",
     "/assets/tibbi/brand/wallet.png",

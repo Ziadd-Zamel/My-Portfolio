@@ -2,10 +2,16 @@ import type { ProjectContent } from "./project.types";
 
 export const ACWADY_PROJECT: ProjectContent = {
   id: "acwady",
-  year: "2025",
-  completedAt: "2025",
+  company: "acwady",
+  year: "2026",
+  completedAt: "Present",
   accent: "info",
   coverImage: "/assets/acwady/brand/main-preview.png",
+  brandImages: [
+    "/assets/acwady/brand/main-preview.png",
+    "/assets/acwady/brand/sub-preview.png",
+    "/assets/acwady/brand/third-preview.png",
+  ],
   videoUrl: "https://www.youtube.com/watch?v=DucQwagcgXk",
   gallery: [
     "/assets/acwady/pages/page-1.png",
