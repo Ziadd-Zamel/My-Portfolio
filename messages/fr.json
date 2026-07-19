@@ -159,6 +159,26 @@
       }
     }
   },
+  "Seo": {
+    "titleTemplate": "%s · Ziad.dev",
+    "keywords": "Ziad Mahmoud, Ingénieur logiciel, Frontend, Next.js, React, TypeScript, Acwady, Égypte, Portfolio",
+    "home": {
+      "title": "Ziad.dev — Ingénieur logiciel",
+      "description": "Ingénieur logiciel chez Acwady. Je construis des produits web rapides et accessibles avec Next.js, React et TypeScript — des vitrines soignées aux dashboards solides."
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Découvrez Ziad Mahmoud — ingénieur logiciel chez Acwady, centré sur le craft frontend, une architecture solide et des produits intentionnels."
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Travaux sélectionnés de Ziad Mahmoud — applications web de production avec Next.js, React et TypeScript pour entreprises et clients."
+    },
+    "project": {
+      "title": "{name}",
+      "description": "{summary}"
+    }
+  },
   "AboutPage": {
     "eyebrow": "À propos",
     "title": "Construire des expériences web propres et évolutives",

@@ -159,6 +159,26 @@
       }
     }
   },
+  "Seo": {
+    "titleTemplate": "%s · Ziad.dev",
+    "keywords": "زياد محمود, مهندس برمجيات, واجهات أمامية, Next.js, React, TypeScript, Acwady, مصر, بورتفوليو",
+    "home": {
+      "title": "Ziad.dev — مهندس برمجيات",
+      "description": "مهندس برمجيات في Acwady. أبني منتجات ويب سريعة وسهلة الوصول باستخدام Next.js وReact وTypeScript — من واجهات المتاجر إلى لوحات التحكم المتينة."
+    },
+    "about": {
+      "title": "عني",
+      "description": "تعرّف على زياد محمود — مهندس برمجيات في Acwady يركز على حرفة الواجهات والبنية المتينة وتسليم منتجات مقصودة."
+    },
+    "projects": {
+      "title": "المشاريع",
+      "description": "أعمال مختارة لزياد محمود — تطبيقات ويب إنتاجية بُنيت بـ Next.js وReact وTypeScript للشركات والعملاء."
+    },
+    "project": {
+      "title": "{name}",
+      "description": "{summary}"
+    }
+  },
   "AboutPage": {
     "eyebrow": "عني",
     "title": "أبني تجارب ويب نظيفة وقابلة للتوسّع",

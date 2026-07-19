@@ -159,6 +159,26 @@
       }
     }
   },
+  "Seo": {
+    "titleTemplate": "%s · Ziad.dev",
+    "keywords": "Ziad Mahmoud, Software Engineer, Frontend, Next.js, React, TypeScript, Acwady, Egypt, Portfolio, Web Developer",
+    "home": {
+      "title": "Ziad.dev — Software Engineer",
+      "description": "Software Engineer at Acwady. I build fast, accessible web products with Next.js, React, and TypeScript — from polished storefronts to solid dashboards."
+    },
+    "about": {
+      "title": "About",
+      "description": "Meet Ziad Mahmoud — Software Engineer at Acwady focused on frontend craft, solid architecture, and shipping products that feel intentional."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Selected work by Ziad Mahmoud — production web apps built with Next.js, React, and TypeScript for companies and clients."
+    },
+    "project": {
+      "title": "{name}",
+      "description": "{summary}"
+    }
+  },
   "AboutPage": {
     "eyebrow": "About",
     "title": "Building clean, scalable web experiences",

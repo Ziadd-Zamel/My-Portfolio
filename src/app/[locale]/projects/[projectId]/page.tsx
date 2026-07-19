@@ -1,5 +1,6 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -15,12 +16,35 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { buildPageMetadata, projectJsonLd } from "@/lib/seo";
 import { ProjectGallery } from "./_components/project-gallery";
 import { ProjectVideo } from "./_components/project-video";
 import { ProjectCompanyBadge } from "../../_components/featured-projects/project-company-badge";
 
 export function generateStaticParams() {
   return ALL_PROJECTS.map((project) => ({ projectId: project.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; projectId: string }>;
+}): Promise<Metadata> {
+  const { locale, projectId } = await params;
+  const project = getProjectById(projectId);
+  if (!project) return {};
+
+  const content = getProjectContent(project, locale);
+  const image =
+    project.coverImage ?? project.brandImages?.[0] ?? "/brand/logo-mark.png";
+
+  return buildPageMetadata({
+    locale,
+    path: `/projects/${project.id}`,
+    title: content.title,
+    description: content.cardDescription,
+    image,
+  });
 }
 
 const linkIcon = {
@@ -33,20 +57,38 @@ const linkIcon = {
 export default async function ProjectDetailsPage({
   params,
 }: {
-  params: Promise<{ projectId: string }>;
+  params: Promise<{ locale: string; projectId: string }>;
 }) {
-  const { projectId } = await params;
+  const { locale, projectId } = await params;
+  setRequestLocale(locale);
+
   const project = getProjectById(projectId);
 
   if (!project) notFound();
 
-  const locale = await getLocale();
   const content = getProjectContent(project, locale);
   const t = await getTranslations("ProjectDetails");
   const live = project.links.find((link) => link.kind === "live");
+  const image = project.coverImage ?? project.brandImages?.[0];
 
   return (
     <main className="relative overflow-hidden bg-canvas">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            projectJsonLd({
+              locale,
+              id: project.id,
+              title: content.title,
+              description: content.cardDescription,
+              image,
+              tech: project.tech,
+              liveUrl: live?.href,
+            }),
+          ),
+        }}
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-112 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklab,var(--brand)_14%,transparent),transparent_65%)]"

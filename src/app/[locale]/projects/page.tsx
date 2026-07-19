@@ -1,8 +1,32 @@
-import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ALL_PROJECTS } from "@/components/constants/projects";
 import { ProjectCard } from "../_components/featured-projects/project-card";
+import { buildPageMetadata } from "@/lib/seo";
 
-export default async function ProjectsPage() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Seo.projects" });
+
+  return buildPageMetadata({
+    locale,
+    path: "/projects",
+    title: t("title"),
+    description: t("description"),
+  });
+}
+
+export default async function ProjectsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("HomePage.featuredProjects");
 
   return (
