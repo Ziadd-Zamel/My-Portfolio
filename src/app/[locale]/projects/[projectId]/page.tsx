@@ -8,7 +8,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import {
-  FEATURED_PROJECTS,
+  ALL_PROJECTS,
   getProjectById,
   getProjectContent,
 } from "@/components/constants/projects";
@@ -19,7 +19,7 @@ import { ProjectGallery } from "./_components/project-gallery";
 import { ProjectVideo } from "./_components/project-video";
 
 export function generateStaticParams() {
-  return FEATURED_PROJECTS.map((project) => ({ projectId: project.id }));
+  return ALL_PROJECTS.map((project) => ({ projectId: project.id }));
 }
 
 const linkIcon = {

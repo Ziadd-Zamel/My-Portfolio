@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { FEATURED_PROJECTS } from "@/components/constants/home-page.constant";
+import { ALL_PROJECTS } from "@/components/constants/projects";
 import { ProjectCard } from "../_components/featured-projects/project-card";
 
 export default async function ProjectsPage() {
@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {FEATURED_PROJECTS.map((project, index) => (
+          {ALL_PROJECTS.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
