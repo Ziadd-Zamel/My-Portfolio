@@ -2,11 +2,17 @@ import type { ProjectContent } from "./project.types";
 
 export const TRADE_LINK_PROJECT: ProjectContent = {
   id: "trade-link",
+  company: "xai",
   year: "2024",
   completedAt: "2024",
   accent: "info",
   featured: false,
   coverImage: "/assets/trade-link/brand/main.png",
+  brandImages: [
+    "/assets/trade-link/brand/main.png",
+    "/assets/trade-link/brand/sub-preview.png",
+    "/assets/trade-link/brand/third-preview.png",
+  ],
   gallery: [
     "/assets/trade-link/pages/page-1.png",
     "/assets/trade-link/pages/page-2.png",

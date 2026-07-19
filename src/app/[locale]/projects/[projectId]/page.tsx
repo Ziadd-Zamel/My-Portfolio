@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { ProjectGallery } from "./_components/project-gallery";
 import { ProjectVideo } from "./_components/project-video";
+import { ProjectCompanyBadge } from "../../_components/featured-projects/project-company-badge";
 
 export function generateStaticParams() {
   return ALL_PROJECTS.map((project) => ({ projectId: project.id }));
@@ -70,6 +71,7 @@ export default async function ProjectDetailsPage({
           </h1>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+            <ProjectCompanyBadge companyId={project.company} size="md" />
             {project.tags.map((tag) => (
               <Badge
                 key={tag}
@@ -124,6 +126,12 @@ export default async function ProjectDetailsPage({
             <section className="rounded-2xl border border-line bg-canvas-raised p-5 sm:p-6">
               <h2 className="text-base font-bold text-ink">{t("metaTitle")}</h2>
               <dl className="mt-4 space-y-3 text-sm">
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                  <dt className="text-ink-muted">{t("company")}</dt>
+                  <dd className="sm:text-end">
+                    <ProjectCompanyBadge companyId={project.company} />
+                  </dd>
+                </div>
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4">
                   <dt className="text-ink-muted">{t("type")}</dt>
                   <dd className="font-medium text-ink sm:text-end">
@@ -134,12 +142,6 @@ export default async function ProjectDetailsPage({
                   <dt className="text-ink-muted">{t("team")}</dt>
                   <dd className="font-medium text-ink sm:text-end">
                     {content.teamLabel}
-                  </dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4">
-                  <dt className="text-ink-muted">{t("completed")}</dt>
-                  <dd className="font-medium text-ink sm:text-end">
-                    {project.completedAt}
                   </dd>
                 </div>
               </dl>

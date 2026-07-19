@@ -2,11 +2,18 @@ import type { ProjectContent } from "./project.types";
 
 export const ORDERLY_PROJECT: ProjectContent = {
   id: "orderly",
+  company: "evyx",
   year: "2025",
   completedAt: "2025",
   accent: "brand",
   featured: false,
   coverImage: "/assets/orderly/brand/main.png",
+  brandImages: [
+    "/assets/orderly/brand/main.png",
+    "/assets/orderly/brand/sub-preview.png",
+    "/assets/orderly/brand/third-preview.png",
+    "/assets/orderly/brand/force-preview.png",
+  ],
   gallery: [
     "/assets/orderly/pages/page-1.png",
     "/assets/orderly/pages/page-2.png",

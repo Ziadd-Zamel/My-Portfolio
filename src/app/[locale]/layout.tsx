@@ -3,6 +3,7 @@ import { DM_Sans, Geist_Mono, Inter, Zain } from "next/font/google";
 import Providers from "@/components/providers";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { HashScroll } from "@/components/layout/hash-scroll";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -33,8 +34,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Personal portfolio",
+  title: {
+    default: "Ziad.dev — Software Engineer",
+    template: "%s · Ziad.dev",
+  },
+  description:
+    "Software Engineer at Acwady. Building fast, accessible web products with Next.js, React, and TypeScript.",
+  icons: {
+    icon: [
+      { url: "/brand/logo-mark.svg", type: "image/svg+xml" },
+      { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicon-48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  openGraph: {
+    title: "Ziad.dev — Software Engineer",
+    description:
+      "Software Engineer at Acwady. Building fast, accessible web products with Next.js, React, and TypeScript.",
+    images: [{ url: "/brand/logo-mark.png", width: 1024, height: 1024, alt: "Ziad.dev" }],
+  },
 };
 
 export function generateStaticParams() {
@@ -87,6 +106,7 @@ export default async function RootLayout({
     >
       <body>
         <Providers>
+          <HashScroll />
           <div className="flex min-h-screen min-w-0 flex-col overflow-x-hidden">
             <Header />
             <main className="min-w-0 flex flex-1 flex-col">{children}</main>

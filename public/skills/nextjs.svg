@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="12" fill="#000000"/>
+  <text x="6.2" y="16.2" fill="#FFFFFF" font-family="Arial Black,Arial,sans-serif" font-size="9" font-weight="700">N</text>
+  <path fill="url(#ng)" d="M12.8 6.2v8.4l4.6 2.7V8.9L12.8 6.2z"/>
+  <defs>
+    <linearGradient id="ng" x1="12" y1="6" x2="18" y2="18">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#999999"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -6,6 +6,7 @@ export const HIGH_COURT_PROJECT: ProjectContent = {
   completedAt: "2025",
   accent: "copper",
   coverImage: "/assets/high-court/brand/main-brand.png",
+  brandImages: ["/assets/high-court/brand/main-brand.png"],
   videoUrl:
     "https://drive.google.com/file/d/1TnzxImBz_npq-3hMRAKPTCywiwz50mvR/preview",
   gallery: [

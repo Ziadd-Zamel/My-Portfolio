@@ -1,11 +1,11 @@
 {
   "HomePage": {
     "hero": {
-      "available": "Disponible",
+      "available": "Actuellement chez Acwady",
       "greeting": "Salut, moi c'est",
       "name": "Ziad",
       "role": "Ingénieur logiciel",
-      "description": "Je conçois et développe des applications web rapides et accessibles avec Next.js, React et TypeScript — en transformant les idées en interfaces soignées et produits évolutifs.",
+      "description": "Ingénieur logiciel chez Acwady — je construis des produits web rapides et accessibles avec Next.js, React et TypeScript. Des vitrines soignées aux dashboards sur lesquels les équipes s'appuient au quotidien.",
       "primaryCta": "Voir mes projets",
       "secondaryCta": "Me contacter",
       "stats": {
@@ -15,7 +15,7 @@
       },
       "card": {
         "title": "developer.ts",
-        "comment": "// construire le web, un composant à la fois"
+        "comment": "// chez Acwady depuis jan. 2026"
       }
     },
     "featuredProjects": {
@@ -27,12 +27,12 @@
     },
     "about": {
       "eyebrow": "À propos",
-      "available": "Disponible",
+      "available": "Actuellement chez Acwady",
       "role": "Ingénieur logiciel",
       "location": "Égypte",
       "title": "Je transforme les idées en",
       "titleAccent": "produits livrés.",
-      "description": "Avec plus de 3 ans d'expérience, je conçois et construis des applications web full-stack avec Next.js, React et Node.js. J'ai livré plus de 40 projets — de Figma à une UI soignée, des APIs solides et des fonctionnalités qui font bouger les métriques.",
+      "description": "Avec plus de 3 ans d'expérience, je conçois et construis des produits web avec Next.js, React et TypeScript. Actuellement Ingénieur logiciel chez Acwady (depuis jan. 2026) — UI soignée, architecture solide, fonctionnalités qui font bouger les métriques.",
       "highlights": {
         "experience": "Ans d'expérience",
         "projects": "Projets livrés",
@@ -63,8 +63,8 @@
         "surprise": "Surprenez-moi",
         "whoami": {
           "line1": "Ziad · Ingénieur logiciel · Égypte",
-          "line2": "Focus : produits web full-stack avec UI propre + DX solide.",
-          "line3": "Statut : disponible."
+          "line2": "Actuellement chez Acwady · depuis jan. 2026.",
+          "line3": "Focus : UI propre + DX solide."
         },
         "stack": {
           "intro": "Stack chargée. Cliquez un outil pour l'inspecter.",
@@ -87,11 +87,67 @@
       "primaryCta": "Plus d'informations",
       "secondaryCta": "Me contacter"
     },
+    "skills": {
+      "eyebrow": "Compétences",
+      "title": "Les outils que j'utilise pour",
+      "titleAccent": "livrer des produits propres.",
+      "description": "Une stack frontend ciblée — React moderne, systèmes typés, et habitudes de craft que j'utilise chaque jour chez Acwady et sur les projets clients.",
+      "filtersLabel": "Filtrer les compétences par catégorie",
+      "categories": {
+        "all": "Tout",
+        "frontend": "Frontend",
+        "state": "État & données",
+        "tooling": "Outillage",
+        "craft": "Craft"
+      },
+      "levels": {
+        "1": "Familier",
+        "2": "Opérationnel",
+        "3": "Solide",
+        "4": "Fort",
+        "5": "Expert"
+      },
+      "featured": {
+        "nextjs": "App Router · apps prod",
+        "react": "Systèmes de composants · UX",
+        "typescript": "Contrats typés · scale",
+        "tailwind": "UI rapide · design systems"
+      },
+      "toolbox": {
+        "eyebrow": "Boîte à outils",
+        "title": "Tout ce que j'utilise",
+        "description": "Choisissez une catégorie, touchez un outil, et voyez comment je l'utilise en produit."
+      },
+      "items": {
+        "nextjs": "App Router, SSR/SSG, routing et apps Next prêtes pour la prod.",
+        "react": "Systèmes UI réutilisables, patterns de state et expériences interactives.",
+        "typescript": "Typage strict qui garde les gros codebases honnêtes et refactorables.",
+        "javascript": "Patterns ES modernes pour une logique navigateur propre.",
+        "tailwind": "Style utility-first avec des tokens de design cohérents.",
+        "html-css": "Markup sémantique, layouts responsives et bases accessibles.",
+        "rtl-i18n": "RTL arabe, next-intl et UX multi-locale.",
+        "tanstack": "Server state, cache et flux async résilients.",
+        "zustand": "State client léger, sans cérémonie.",
+        "zod": "Validation runtime et contrats typés formulaires/API.",
+        "react-hook-form": "Formulaires performants avec une UX de validation claire.",
+        "next-auth": "Sessions auth, routes protégées et flux credentials.",
+        "nodejs": "APIs, glue auth et support backend pour les produits frontend.",
+        "git": "Historique propre, PRs et livraison collaborative.",
+        "sentry": "Monitoring prod et feedback d'incidents plus rapide.",
+        "chartjs": "Dashboards et dataviz clairs pour les équipes ops.",
+        "rest-api": "Intégrer et façonner des REST APIs pour de vrais flux produit.",
+        "figma": "Passage design → code avec soin pixel-level.",
+        "ui-systems": "Composants réutilisables, tokens et UI produit cohérente.",
+        "accessibility": "Flux clavier, sémantique et interfaces inclusives.",
+        "performance": "Chargements plus rapides, UX fluide et gains mesurables.",
+        "responsive": "Layouts mobile-first nets sur tous les breakpoints."
+      }
+    },
     "contact": {
       "eyebrow": "Contact",
       "title": "Construisons quelque chose",
       "titleAccent": "qui mérite d'être livré.",
-      "available": "Disponible pour de nouveaux projets",
+      "available": "Ouvert aux échanges",
       "description": "Un projet, un poste ou une idée ? Écrivez-moi, je vous répondrai rapidement.",
       "primaryCta": "M'écrire",
       "secondaryCta": "Télécharger le CV",
@@ -106,7 +162,7 @@
   "AboutPage": {
     "eyebrow": "À propos",
     "title": "Construire des expériences web propres et évolutives",
-    "description": "Je suis Ziad, ingénieur logiciel centré sur le craft frontend et une architecture produit solide. Je travaille principalement avec Next.js, React, TypeScript et Node.js — du passage de Figma à l'UI de production jusqu'aux APIs et à la performance. Je vise des interfaces claires, un code maintenable, et un travail qui se sent intentionnel.",
+    "description": "Je suis Ziad, ingénieur logiciel centré sur le craft et une architecture produit solide. Actuellement chez Acwady (depuis jan. 2026). Je travaille principalement avec Next.js, React, TypeScript et Node.js — du passage de Figma à l'UI de production jusqu'aux APIs et à la performance. Je vise des interfaces claires, un code maintenable, et un travail qui se sent intentionnel.",
     "cta": "Me contacter"
   },
   "ProjectDetails": {
@@ -115,9 +171,9 @@
     "galleryEmpty": "Plus de captures bientôt.",
     "video": "Aperçu du projet",
     "metaTitle": "Détails du projet",
+    "company": "Entreprise",
     "type": "Type de projet",
     "team": "Taille de l'équipe",
-    "completed": "Livré",
     "skills": "Compétences utilisées",
     "links": "Liens du projet",
     "overview": "Aperçu du projet",
@@ -142,7 +198,7 @@
       "contact": "Contact"
     },
     "cta": "Me recruter",
-    "available": "Disponible",
+    "available": "Actuellement chez Acwady",
     "language": "Langue",
     "switchDark": "Passer au mode sombre",
     "switchLight": "Passer au mode clair",

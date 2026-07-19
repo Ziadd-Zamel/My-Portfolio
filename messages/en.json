@@ -1,11 +1,11 @@
 {
   "HomePage": {
     "hero": {
-      "available": "Available for work",
+      "available": "Currently at Acwady",
       "greeting": "Hi, I'm",
       "name": "Ziad",
       "role": "Software Engineer",
-      "description": "I design and build fast, accessible web apps with Next.js, React, and TypeScript — turning ideas into polished interfaces and scalable products.",
+      "description": "Software Engineer at Acwady — building fast, accessible web products with Next.js, React, and TypeScript. From polished storefronts to solid dashboards that teams ship on.",
       "primaryCta": "View my work",
       "secondaryCta": "Get in touch",
       "stats": {
@@ -15,7 +15,7 @@
       },
       "card": {
         "title": "developer.ts",
-        "comment": "// building the web, one component at a time"
+        "comment": "// shipping at Acwady since Jan 2026"
       }
     },
     "featuredProjects": {
@@ -27,12 +27,12 @@
     },
     "about": {
       "eyebrow": "About me",
-      "available": "Available for work",
+      "available": "Currently at Acwady",
       "role": "Software Engineer",
       "location": "Egypt",
       "title": "I turn ideas into",
       "titleAccent": "products that ship.",
-      "description": "With 3+ years of experience, I design and build full-stack web apps with Next.js, React, and Node.js. I've shipped 40+ projects — from Figma to polished UI, solid APIs, and features that actually move metrics.",
+      "description": "With 3+ years of experience, I design and build web products with Next.js, React, and TypeScript. Currently Software Engineer at Acwady (since Jan 2026) — shipping polished UI, solid architecture, and features that move metrics.",
       "highlights": {
         "experience": "Years experience",
         "projects": "Projects shipped",
@@ -63,8 +63,8 @@
         "surprise": "Surprise me",
         "whoami": {
           "line1": "Ziad · Software Engineer · Egypt",
-          "line2": "Focus: full-stack web products with clean UI + solid DX.",
-          "line3": "Status: available for work."
+          "line2": "Currently at Acwady · since Jan 2026.",
+          "line3": "Focus: clean UI + solid DX."
         },
         "stack": {
           "intro": "Core stack loaded. Click a tool to inspect it.",
@@ -87,11 +87,67 @@
       "primaryCta": "More information",
       "secondaryCta": "Contact me"
     },
+    "skills": {
+      "eyebrow": "Skills",
+      "title": "Tools I use to",
+      "titleAccent": "ship clean products.",
+      "description": "A focused frontend stack — modern React, typed systems, and craft habits I use every day at Acwady and across client work.",
+      "filtersLabel": "Filter skills by category",
+      "categories": {
+        "all": "All",
+        "frontend": "Frontend",
+        "state": "State & data",
+        "tooling": "Tooling",
+        "craft": "Craft"
+      },
+      "levels": {
+        "1": "Familiar",
+        "2": "Working",
+        "3": "Solid",
+        "4": "Strong",
+        "5": "Expert"
+      },
+      "featured": {
+        "nextjs": "App Router · production apps",
+        "react": "Component systems · UX",
+        "typescript": "Typed contracts · scale",
+        "tailwind": "Fast UI · design systems"
+      },
+      "toolbox": {
+        "eyebrow": "Toolbox",
+        "title": "Everything I reach for",
+        "description": "Pick a category, tap a tool, and see how I use it in real products."
+      },
+      "items": {
+        "nextjs": "App Router, SSR/SSG, routing, and production-ready Next apps.",
+        "react": "Reusable UI systems, state patterns, and interactive experiences.",
+        "typescript": "Strict typing that keeps large codebases honest and refactorable.",
+        "javascript": "Modern ES patterns for clean, maintainable browser logic.",
+        "tailwind": "Utility-first styling with consistent design tokens.",
+        "html-css": "Semantic markup, responsive layouts, and accessible foundations.",
+        "rtl-i18n": "Arabic RTL, next-intl, and multi-locale product UX.",
+        "tanstack": "Server state, caching, and resilient async data flows.",
+        "zustand": "Lightweight client state without ceremony.",
+        "zod": "Runtime validation and typed form/API contracts.",
+        "react-hook-form": "Performant forms with clear validation UX.",
+        "next-auth": "Auth sessions, protected routes, and credential flows.",
+        "nodejs": "APIs, auth glue, and backend support for frontend products.",
+        "git": "Clean history, PRs, and collaborative delivery.",
+        "sentry": "Production monitoring and faster incident feedback.",
+        "chartjs": "Clear dashboards and data visuals for ops teams.",
+        "rest-api": "Integrating and shaping REST APIs for real product flows.",
+        "figma": "Design-to-code translation with pixel-level care.",
+        "ui-systems": "Reusable components, tokens, and consistent product UI.",
+        "accessibility": "Keyboard flows, semantics, and inclusive interfaces.",
+        "performance": "Faster loads, smoother UX, and measurable improvements.",
+        "responsive": "Mobile-first layouts that stay sharp across breakpoints."
+      }
+    },
     "contact": {
       "eyebrow": "Contact",
       "title": "Let's build something",
       "titleAccent": "worth shipping.",
-      "available": "Available for new work",
+      "available": "Open to conversations",
       "description": "Have a project, role, or idea in mind? Reach out and I'll get back to you soon.",
       "primaryCta": "Email me",
       "secondaryCta": "Download CV",
@@ -106,7 +162,7 @@
   "AboutPage": {
     "eyebrow": "About",
     "title": "Building clean, scalable web experiences",
-    "description": "I'm Ziad, a Software Engineer focused on frontend craft and solid product architecture. I work mainly with Next.js, React, TypeScript, and Node.js — from translating Figma into production UI to shaping APIs and performance. I care about clear interfaces, maintainable code, and shipping work that feels intentional.",
+    "description": "I'm Ziad, a Software Engineer focused on craft and solid product architecture. Currently at Acwady (since Jan 2026). I work mainly with Next.js, React, TypeScript, and Node.js — from translating Figma into production UI to shaping APIs and performance. I care about clear interfaces, maintainable code, and shipping work that feels intentional.",
     "cta": "Contact me"
   },
   "ProjectDetails": {
@@ -115,9 +171,9 @@
     "galleryEmpty": "More screenshots coming soon.",
     "video": "Project preview",
     "metaTitle": "Project details",
+    "company": "Company",
     "type": "Project type",
     "team": "Team size",
-    "completed": "Completed",
     "skills": "Skills used",
     "links": "Project links",
     "overview": "Project overview",
@@ -142,7 +198,7 @@
       "contact": "Contact"
     },
     "cta": "Hire me",
-    "available": "Available for work",
+    "available": "Currently at Acwady",
     "language": "Language",
     "switchDark": "Switch to dark mode",
     "switchLight": "Switch to light mode",

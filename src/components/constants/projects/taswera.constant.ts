@@ -2,11 +2,18 @@ import type { ProjectContent } from "./project.types";
 
 export const TASWERA_PROJECT: ProjectContent = {
   id: "taswera",
+  company: "evyx",
   year: "2024",
   completedAt: "2024",
   accent: "info",
   featured: false,
   coverImage: "/assets/taswera/brand/main.png",
+  brandImages: [
+    "/assets/taswera/brand/main.png",
+    "/assets/taswera/brand/sub-preview.png",
+    "/assets/taswera/brand/sub-preview-2.png",
+    "/assets/taswera/brand/third-preview.png",
+  ],
   gallery: [
     "/assets/taswera/pages/page-1.png",
     "/assets/taswera/pages/page-2.png",
