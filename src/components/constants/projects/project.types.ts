@@ -25,6 +25,8 @@ export type ProjectContent = {
   year: string;
   completedAt: string;
   accent: ProjectAccent;
+  /** When false, shown on /projects only — not on the home featured list */
+  featured?: boolean;
   coverImage?: string;
   /** Optional YouTube (or similar) preview — omit when the project has no video */
   videoUrl?: string;

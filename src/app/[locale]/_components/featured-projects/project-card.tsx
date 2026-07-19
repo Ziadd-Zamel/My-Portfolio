@@ -2,15 +2,15 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
-import { FEATURED_PROJECTS } from "@/components/constants/home-page.constant";
 import {
+  ALL_PROJECTS,
   getProjectById,
   getProjectContent,
 } from "@/components/constants/projects";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-type Project = (typeof FEATURED_PROJECTS)[number];
+type Project = (typeof ALL_PROJECTS)[number];
 
 const accents = {
   brand: {
